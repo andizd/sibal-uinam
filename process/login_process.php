@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
     $nim = $_POST['nim'];
     $password = $_POST['password'];
 
-    $data = mysqli_query($koneksi, "SELECT * FROM users WHERE nim='$nim' AND password='$password'");
+    $data = mysqli_query($conn, "SELECT * FROM users WHERE nim='$nim' AND password='$password'");
     
     // Hitung jumlah data yang ditemukan
     $cek = mysqli_num_rows($data);
@@ -36,7 +36,7 @@ if(isset($_POST['login'])){
 
         header("location:index.php");
     } else {
-        $pesan_error = "NIM atau Password salah bos!";
+        $pesan_error = "NIM atau Password salah!";
     }
 }
 ?>

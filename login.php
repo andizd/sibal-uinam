@@ -45,8 +45,9 @@ include 'process/login_process.php';
         </form>
         
         <p class="text-center mt-4 text-xs text-gray-400">
-            Belum punya akun? Minta admin buatkan.
+            Belum punya akun? <a href="register.php" class="text-blue-600 font-bold">Daftar di sini</a>
         </p>
+
     </div>
 
 </body>

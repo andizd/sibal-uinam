@@ -1,3 +1,9 @@
+<?php 
+include 'config/connection.php';
+
+$query = "SELECT * FROM barang ORDER BY id_barang DESC";
+$result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +57,67 @@
                         <th class="p-4 border-b text-center">Aksi</th>
                     </tr>
                 </thead>
-                
+                <tbody class="text-gray-600 text-sm">
+                    
+                    <?php 
+                    $no = 1;
+                    // Looping data dari database
+                    while ($row = mysqli_fetch_assoc($result)) { 
+                    ?>
+                    
+                    <tr class="hover:bg-gray-50 border-b last:border-b-0 transition">
+                        <td class="p-4"><?= $no++; ?></td>
+                        <td class="p-4">
+                            <img src="uploads/<?= $row['foto_barang']; ?>" alt="Foto" class="w-16 h-16 object-cover rounded-md border shadow-sm">
+                        </td>
+                        <td class="p-4 align-top">
+                            <p class="font-bold text-gray-800 text-lg"><?= $row['nama_barang']; ?></p>
+                            <p class="text-xs text-gray-500 mt-1 line-clamp-2"><?= $row['deskripsi']; ?></p>
+                        </td>
+                        <td class="p-4 align-top">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fas fa-map-marker-alt text-red-500"></i>
+                                <span><?= $row['lokasi_hilang']; ?></span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-400 text-xs">
+                                <i class="fas fa-calendar"></i>
+                                <span><?= date('d M Y', strtotime($row['tgl_hilang'])); ?></span>
+                            </div>
+                        </td>
+                        <td class="p-4">
+                            <?php if($row['status'] == 'Hilang'): ?>
+                                <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-bold border border-red-200">
+                                    Hilang
+                                </span>
+                            <?php else: ?>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-200">
+                                    Ditemukan
+                                </span>
+                            <?php endif; ?>
+                        </td>
+                        <td class="p-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <a href="edit.php?id=<?= $row['id_barang']; ?>" class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow transition" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="hapus.php?id=<?= $row['id_barang']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <?php } ?>
+
+                    <?php if(mysqli_num_rows($result) == 0): ?>
+                    <tr>
+                        <td colspan="6" class="p-8 text-center text-gray-400">
+                            Belum ada laporan barang hilang.
+                        </td>
+                    </tr>
+                    <?php endif; ?>
+
+                </tbody>
             </table>
         </div>
     </div>
