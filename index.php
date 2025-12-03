@@ -11,6 +11,7 @@ $result = mysqli_query($conn, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/script.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -31,8 +32,8 @@ $result = mysqli_query($conn, $query);
                 <h1 class="text-3xl font-bold text-gray-800">SIBAL-<span class="text-green-600">UINAM</span></h1>
                 <p class="text-gray-500">Sistem Informasi Barang Hilang</p>
             </div>
-            <a href="tambah.php" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2">
-                <i class="fas fa-plus"></i> Lapor Barang
+            <a href="add.php" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2">
+                Lapor Barang
             </a>
         </div>
 
@@ -42,6 +43,9 @@ $result = mysqli_query($conn, $query);
                     <i class="fas fa-search"></i>
                 </span>
                 <input type="text" id="search" placeholder="Cari nama barang hilang..." class="w-full py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-md">
+                <script>
+                    searchTable();
+                </script>
             </div>
         </div>
 
