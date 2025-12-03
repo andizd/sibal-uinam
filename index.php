@@ -32,9 +32,12 @@ $result = mysqli_query($conn, $query);
                 <h1 class="text-3xl font-bold text-gray-800">SIBAL-<span class="text-green-600">UINAM</span></h1>
                 <p class="text-gray-500">Sistem Informasi Barang Hilang</p>
             </div>
-            <a href="add.php" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2">
-                Lapor Barang
-            </a>
+            <div class="text-right">
+                <a href="add.php" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2">
+                    Lapor Barang
+                </a>
+                <a href="logout.php" class="text-sm text-red-600 hover:underline">← Keluar</a>
+            </div>
         </div>
 
         <div class="mb-6">
@@ -104,7 +107,7 @@ $result = mysqli_query($conn, $query);
                                 <a href="edit.php?id=<?= $row['id_barang']; ?>" class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow transition" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="hapus.php?id=<?= $row['id_barang']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
+                                <a href="process/delete.php?id=<?= $row['id_barang']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
