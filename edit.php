@@ -1,3 +1,7 @@
+<?php 
+include 'config/connection.php';
+include 'process/edit_process.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +50,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2">Status Barang</label>
                 <select name="status" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white">
                     <option value="Hilang" <?= ($data['status'] == 'Hilang') ? 'selected' : ''; ?>>Hilang</option>
-                    <option value="Ditemukan" <?= ($data['status'] == 'Ditemukan') ? 'selected' : ''; ?>>Ditemukan / Kembali</option>
+                    <option value="Ditemukan" <?= ($data['status'] == 'Ditemukan') ? 'selected' : ''; ?>>Ditemukan</option>
                 </select>
             </div>
 
