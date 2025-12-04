@@ -2,7 +2,7 @@
 include 'config/connection.php';
 
 if (isset($_POST['simpan'])) {
-    $id_user = 1; // Dummy user sementara
+    $id_user = $_SESSION['id_user'];
     
     $nama_barang   = $_POST['nama_barang'];
     $deskripsi     = $_POST['deskripsi'];
