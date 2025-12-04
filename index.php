@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'config/connection.php';
 
 $query = "SELECT * FROM barang ORDER BY id_barang DESC";
@@ -12,6 +12,7 @@ $result = mysqli_query($conn, $query);
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,9 +29,12 @@ $result = mysqli_query($conn, $query);
 <body class="bg-gray-50 min-h-screen p-8">
     <div class="max-w-6xl mx-auto">
         <div class="flex justify-between items-center mb-8">
-            <div>
-                <h1 class="text-3xl font-bold text-gray-800">SIBAL-<span class="text-green-600">UINAM</span></h1>
-                <p class="text-gray-500">Sistem Informasi Barang Hilang</p>
+            <div class="flex items-center gap-4">
+                <img src="assets/img/Logo.png" alt="SIBAL-UINAM Logo" class="w-16 h-16">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">SIBAL-<span class="text-green-700">UINAM</span></h1>
+                    <p class="text-gray-500">Sistem Informasi Barang Hilang</p>
+                </div>
             </div>
             <div class="text-right">
                 <a href="add.php" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2">
