@@ -19,6 +19,7 @@ $result = mysqli_query($conn, $query);
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -87,11 +88,11 @@ $result = mysqli_query($conn, $query);
                         <td class="p-4">
                             <img src="uploads/<?= $row['foto_barang']; ?>" alt="Foto" class="w-16 h-16 object-cover rounded-md border shadow-sm">
                         </td>
-                        <td class="p-4 align-top">
+                        <td class="p-4">
                             <p class="font-bold text-gray-800 text-lg"><?= $row['nama_barang']; ?></p>
                             <p class="text-xs text-gray-500 mt-1 line-clamp-2"><?= $row['deskripsi']; ?></p>
                         </td>
-                        <td class="p-4 align-top">
+                        <td class="p-4">
                             <div class="flex items-center gap-2 mb-1">
                                 <i class="fas fa-map-marker-alt text-red-500"></i>
                                 <span><?= $row['lokasi_hilang']; ?></span>
