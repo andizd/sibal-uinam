@@ -9,12 +9,18 @@ include 'process/login_process.php';
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-blue-50 h-screen flex items-center justify-center">
-
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
+<body class="bg-blue-50 h-screen flex items-center justify-center gap-32">
+    <div class="flex items-center gap-4">
+        <img src="assets/img/Logo.png" alt="SIBAL-UINAM Logo" class="w-20 h-20">
+        <div>
+            <h1 class="text-4xl font-bold text-gray-800">SIBAL-<span class="text-green-700">UINAM</span></h1>
+            <p class="text-md text-gray-500">Sistem Informasi Barang Hilang</p>
+        </div>
+    </div>
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         <div class="text-center mb-6">
             <h1 class="text-2xl font-bold text-gray-800">Silakan Login</h1>
-            <p class="text-gray-500 text-sm">Masuk untuk melapor barang.</p>
+            <p class="text-gray-500 text-sm">Masuk untuk melapor barang hilang.</p>
         </div>
 
         <?php if($pesan_error != ""): ?>
@@ -34,11 +40,6 @@ include 'process/login_process.php';
                 <input type="password" name="password" required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 border-gray-300">
             </div>
 
-            <div class="flex items-center">
-                <input type="checkbox" name="remember" id="remember" class="mr-2 rounded text-blue-600 focus:ring-blue-500">
-                <label for="remember" class="text-sm text-gray-600">Ingat Saya</label>
-            </div>
-
             <button type="submit" name="login" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition">
                 Masuk Sekarang
             </button>
@@ -49,6 +50,5 @@ include 'process/login_process.php';
         </p>
 
     </div>
-
 </body>
 </html>

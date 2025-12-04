@@ -27,13 +27,6 @@ if(isset($_POST['login'])){
         $_SESSION['nama'] = $row['nama_lengkap'];
         $_SESSION['status'] = "login";
 
-        // Cek apakah user mencentang "Ingat Saya" (COOKIE)
-        if(isset($_POST['remember'])){
-            // Buat cookie berlaku 1 jam
-            setcookie('id_user', $row['id_user'], time() + 3600); 
-            setcookie('key', hash('sha256', $row['nama_lengkap']), time() + 3600);
-        }
-
         header("location:index.php");
     } else {
         $pesan_error = "NIM atau Password salah!";

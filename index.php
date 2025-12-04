@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
+    header("location:login.php");
+    exit();
+}
 include 'config/connection.php';
 
 $query = "SELECT * FROM barang ORDER BY id_barang DESC";
