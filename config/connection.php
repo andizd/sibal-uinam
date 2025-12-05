@@ -1,8 +1,8 @@
 <?php 
 $server = "localhost";
-$user = "root";
-$pass = "";
-$database = "sibal_db";
+$user = "turh8536_sibal_user";
+$pass = "SibalUINAM2025";
+$database = "turh8536_sibal_db";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
 
