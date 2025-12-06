@@ -9,7 +9,7 @@ $data = mysqli_fetch_assoc($result_ambil);
 
 // Jika data tidak ditemukan (misal user iseng ganti ID di URL)
 if(mysqli_num_rows($result_ambil) < 1) {
-    echo "<script>alert('Data tidak ditemukan!'); window.location='index.php';</script>";
+    echo "<script>alert('Data tidak ditemukan!'); window.location='../index.php';</script>";
 }
 
 if (isset($_POST['update'])) {
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
     $result = mysqli_query($conn, $query_update);
 
     if ($result) {
-        echo "<script>alert('Data berhasil diupdate!'); window.location='index.php';</script>";
+        echo "<script>alert('Data berhasil diupdate!'); window.location='../index.php';</script>";
     } else {
         echo "Gagal update: " . mysqli_error($conn);
     }

@@ -2,9 +2,8 @@
 session_start();
 include '../config/connection.php';
 
-// Jika sudah login, tendang ke index
 if(isset($_SESSION['status']) && $_SESSION['status'] == "login"){
-    header("location:index.php");
+    header("location:../index.php");
 }
 
 $pesan_error = "";
@@ -27,7 +26,7 @@ if(isset($_POST['login'])){
         $_SESSION['nama'] = $row['nama_lengkap'];
         $_SESSION['status'] = "login";
 
-        header("location:index.php");
+        header("location:../index.php");
     } else {
         $pesan_error = "NIM atau Password salah!";
     }

@@ -22,7 +22,7 @@ if (isset($_POST['simpan'])) {
         $result = mysqli_query($conn, $query);
 
         if ($result) {
-            echo "<script>alert('Data berhasil ditambahkan!'); window.location='index.php';</script>";
+            echo "<script>alert('Data berhasil ditambahkan!'); window.location='../index.php';</script>";
         } else {
             echo "Gagal menyimpan: " . mysqli_error($conn);
         }
