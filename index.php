@@ -86,7 +86,12 @@ $result = mysqli_query($conn, $query);
                     <tr class="hover:bg-gray-50 border-b last:border-b-0 transition">
                         <td class="p-4"><?= $no++; ?></td>
                         <td class="p-4">
-                            <img src="uploads/<?= $row['foto_barang']; ?>" alt="Foto" class="w-16 h-16 object-cover rounded-md border shadow-sm">
+                            <img 
+                                src="uploads/<?= $row['foto_barang']; ?>" 
+                                alt="Foto" 
+                                class="w-16 h-16 object-cover rounded-md border shadow-sm"
+                                onclick="showImage('uploads/<?= $row['foto_barang']; ?>')"
+                            >
                         </td>
                         <td class="p-4">
                             <p class="font-bold text-gray-800 text-lg"><?= $row['nama_barang']; ?></p>
@@ -139,5 +144,14 @@ $result = mysqli_query($conn, $query);
             </table>
         </div>
     </div>
+    <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+    <div class="relative">
+        <img id="modalImage" src="" class="max-w-xl max-h-[80vh] rounded-lg shadow-lg border-4 border-white">
+        <button onclick="closeImage()" 
+        class="absolute -top-4 -right-4 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center shadow">
+            ✖
+        </button>
+    </div>
+</div>
 </body>
 </html>

@@ -44,3 +44,22 @@ function searchTable() {
     }
   }
 }
+
+function showImage(src) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+
+    modalImg.src = src;
+    modal.classList.remove("hidden");
+}
+
+function closeImage() {
+    document.getElementById("imageModal").classList.add("hidden");
+}
+
+// Klik area gelap untuk menutup modal
+document.getElementById("imageModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        this.classList.add("hidden");
+    }
+});
