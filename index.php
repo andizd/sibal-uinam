@@ -18,7 +18,6 @@ $result = mysqli_query($conn, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -153,5 +152,7 @@ $result = mysqli_query($conn, $query);
             </button>
         </div>
     </div>
+    
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
