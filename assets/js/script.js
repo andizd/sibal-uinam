@@ -45,21 +45,41 @@ function searchTable() {
   }
 }
 
-function showImage(src) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const btnClose = document.getElementById("btnCloseModal");
 
-    modalImg.src = src;
-    modal.classList.remove("hidden");
-}
+    // Ambil semua gambar yang bisa di-preview
+    const previewImages = document.querySelectorAll(".preview");
 
-function closeImage() {
-    document.getElementById("imageModal").classList.add("hidden");
-}
+    // Saat gambar diklik
+    previewImages.forEach(img => {
+        img.addEventListener("click", () => {
+            modalImg.src = img.getAttribute("data-src");
+            modal.classList.remove("hidden");
+        });
+    });
 
-// Klik area gelap untuk menutup modal
-document.getElementById("imageModal").addEventListener("click", function(e) {
-    if (e.target === this) {
-        this.classList.add("hidden");
-    }
+    // Tombol X
+    btnClose.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modalImg.src = "";
+    });
+
+    // Klik area gelap (bukan gambar)
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.add("hidden");
+            modalImg.src = "";
+        }
+    });
+
+    // Tombol ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.classList.add("hidden");
+            modalImg.src = "";
+        }
+    });
 });
