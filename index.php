@@ -81,7 +81,7 @@ $result = mysqli_query($conn, $query);
                     // Looping data dari database
                     while ($row = mysqli_fetch_assoc($result)) { 
                     ?>
-                    
+                    <?php $current_user = $_SESSION['id_user']; ?>
                     <tr class="hover:bg-gray-50 border-b last:border-b-0 transition">
                         <td class="p-4"><?= $no++; ?></td>
                         <td class="p-4">
@@ -119,18 +119,21 @@ $result = mysqli_query($conn, $query);
                         </td>
                         <td class="p-4 text-center">
                             <div class="flex justify-center gap-2">
-                                <a href="edit.php?id=<?= $row['id_barang']; ?>" class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow transition" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a onclick="return confirm('Yakin ingin menghapus data ini?')" href="process/delete_process.php?id=<?= $row['id_barang']; ?>" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <?php if ($row['id_user']==$current_user): ?>
+                                    <a href="edit.php?id=<?= $row['id_barang']; ?>" 
+                                        class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                <?php else: ?>
+                                    <a href="tanggapi.php?id=<?= $row['id_barang']; ?>" 
+                                    class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md shadow">
+                                        <i class="fas fa-comments"></i>  
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>
-
                     <?php } ?>
-
                     <?php if(mysqli_num_rows($result) == 0): ?>
                     <tr>
                         <td colspan="6" class="p-8 text-center text-gray-400">
