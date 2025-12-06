@@ -1,5 +1,5 @@
 <?php 
-include '../config/connection.php';
+include $_SERVER['DOCUMENT_ROOT'] . "/sibal.turateaberkabar.com/config/connection.php";
 
 if (isset($_POST['simpan'])) {
     $id_user = $_SESSION['id_user'];
@@ -22,7 +22,7 @@ if (isset($_POST['simpan'])) {
         $result = mysqli_query($conn, $query);
 
         if ($result) {
-            echo "<script>alert('Data berhasil ditambahkan!'); window.location='../index.php';</script>";
+            echo "<script>alert('Data berhasil ditambahkan!'); window.location='index.php';</script>";
         } else {
             echo "Gagal menyimpan: " . mysqli_error($conn);
         }
