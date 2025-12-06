@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config/connection.php';
+include '../config/connection.php';
 
 // Jika sudah login, tendang ke index
 if(isset($_SESSION['status']) && $_SESSION['status'] == "login"){

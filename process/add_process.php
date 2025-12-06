@@ -1,5 +1,5 @@
 <?php 
-include 'config/connection.php';
+include '../config/connection.php';
 
 if (isset($_POST['simpan'])) {
     $id_user = $_SESSION['id_user'];
