@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
-include $_SERVER['DOCUMENT_ROOT'] . "/sibal.turateaberkabar.com/config/connection.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/config/connection.php";
 
 if(isset($_SESSION['status']) && $_SESSION['status'] == "login"){
     header("location:index.php");

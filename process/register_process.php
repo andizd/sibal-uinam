@@ -1,5 +1,5 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'] . "/sibal.turateaberkabar.com/config/connection.php";;
+include $_SERVER['DOCUMENT_ROOT'] . "/config/connection.php";;
 
 if(isset($_POST['register'])){
     $nim = $_POST['nim'];

@@ -1,5 +1,5 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'] . "/sibal.turateaberkabar.com/config/connection.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/config/connection.php";
 
 $id = $_GET['id'];
 
