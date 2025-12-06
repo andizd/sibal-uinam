@@ -8,6 +8,7 @@ include 'process/register_process.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body class="bg-blue-50 h-screen flex items-center justify-center gap-32">
     <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">

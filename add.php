@@ -16,6 +16,7 @@ if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/script.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center py-10">
 
