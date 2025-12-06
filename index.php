@@ -121,7 +121,7 @@ $result = mysqli_query($conn, $query);
                                 <a href="edit.php?id=<?= $row['id_barang']; ?>" class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow transition" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="process/delete_process.php?id=<?= $row['id_barang']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
+                                <a onclick="return confirm('Yakin ingin menghapus data ini?')" href="process/delete_process.php?id=<?= $row['id_barang']; ?>" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
