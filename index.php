@@ -59,10 +59,7 @@ $result = mysqli_query($conn, $query);
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
                     <i class="fas fa-search"></i>
                 </span>
-                <input type="text" id="search" placeholder="Cari nama barang hilang..." class="w-full py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-md">
-                <script>
-                    searchTable();
-                </script>
+                <input type="text" id="searchInput" oninput="searchTable()" placeholder="Cari nama barang hilang..." class="w-full py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-md">
             </div>
         </div>
 
