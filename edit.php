@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 include 'config/connection.php';
 include 'process/edit_process.php';
 
