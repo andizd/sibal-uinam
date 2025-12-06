@@ -2,6 +2,11 @@
 session_start();
 include 'config/connection.php';
 include 'process/add_process.php';
+
+if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
+    header("location:login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
