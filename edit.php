@@ -15,6 +15,7 @@ if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIBAL-UINAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/script.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 </head>
