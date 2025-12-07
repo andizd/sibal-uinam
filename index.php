@@ -119,16 +119,23 @@ $result = mysqli_query($conn, $query);
                         </td>
                         <td class="p-4 text-center">
                             <div class="flex justify-center gap-2">
-                                <?php if ($row['id_user']==$current_user): ?>
+                                <?php if ($row['id_user'] == $current_user): ?>
+
+                                    <!-- Tombol Edit: hanya pemilik -->
                                     <a href="edit.php?id=<?= $row['id_barang']; ?>" 
                                         class="bg-yellow-400 hover:bg-yellow-500 text-white p-2 rounded-md shadow">
                                         <i class="fas fa-edit"></i>
                                     </a>
+
                                 <?php else: ?>
-                                    <a href="tanggapi.php?id=<?= $row['id_barang']; ?>" 
-                                    class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md shadow">
-                                        <i class="fas fa-comments"></i>  
+
+                                    <!-- Tombol Tanggapi via WhatsApp -->
+                                    <a href="https://wa.me/<?= $nohp; ?>?text=<?= $pesan; ?>"
+                                    target="_blank"
+                                    class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-md shadow flex items-center gap-1">
+                                        <i class="fab fa-whatsapp"></i> 
                                     </a>
+
                                 <?php endif; ?>
                             </div>
                         </td>
