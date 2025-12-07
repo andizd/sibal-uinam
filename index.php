@@ -133,7 +133,7 @@ $result = mysqli_query($conn, $query);
                                 <?php else: ?>
 
                                     <!-- Tombol Tanggapi via WhatsApp -->
-                                    <a href="https://wa.me/<?= $nohp; ?>?text=<?= $pesan; ?>"
+                                    <a href="https://wa.me/<?= $hp; ?>?text=<?= $pesan; ?>"
                                     target="_blank"
                                     class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-md shadow flex items-center gap-1">
                                         <i class="fab fa-whatsapp"></i> 
