@@ -137,6 +137,9 @@ $result = mysqli_query($conn, $query);
                                     </a>
 
                                 <?php endif; ?>
+                                <a onclick="return confirm('Yakin ingin menghapus data ini?')" href="process/delete_process.php?id=<?= $row['id_barang']; ?>" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md shadow transition" title="Hapus">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
