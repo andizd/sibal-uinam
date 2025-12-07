@@ -118,6 +118,16 @@ $result = mysqli_query($conn, $query);
                             <?php endif; ?>
                         </td>
                         <td class="p-4 text-center">
+                            <?php 
+                            $current_user = $_SESSION['id_user'];
+                            $hp = $row['hp']; // nomor WA pemilik
+                            $hp = preg_replace('/^0/', '62', $hp); // ubah 08xx → 628xx
+
+                            $pesan = "Halo, saya melihat laporan barang hilang Anda di SIBAL-UINAM.%0A"
+                                . "Apakah barang ini masih belum ditemukan?%0A%0A"
+                                . "Nama Barang: " . urlencode($row['nama_barang']);
+                            ?>
+
                             <div class="flex justify-center gap-2">
                                 <?php if ($row['id_user'] == $current_user): ?>
 
