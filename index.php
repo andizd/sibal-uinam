@@ -62,7 +62,7 @@ $result = mysqli_query($conn, $query);
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row md:items-center md:gap-3 text-right">
+            <div class="flex flex-row md:flex-row md:items-center md:gap-3 text-right">
                 <a href="add.php"
                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition flex items-center gap-2 justify-center">
                     Lapor Barang
