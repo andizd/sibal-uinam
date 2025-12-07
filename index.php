@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
@@ -9,7 +12,7 @@ if(!isset($_SESSION['status']) || $_SESSION['status'] != "login"){
 include 'config/connection.php';
 
 // JOIN AGAR BISA AMBIL NOMOR HP PEMILIK
-$query = "SELECT barang.*, users.hp 
+$query = "SELECT barang.*, users.no_hp 
           FROM barang 
           JOIN users ON users.id_user = barang.id_user
           ORDER BY id_barang DESC";
@@ -154,7 +157,7 @@ $result = mysqli_query($conn, $query);
                     <!-- AKSI -->
                     <td class="p-4 text-center">
                         <?php 
-                        $hp = preg_replace('/^0/', '62', $row['hp']); 
+                        $hp = preg_replace('/^0/', '62', $row['no_hp']); 
                         $pesan = urlencode(
                             "Halo, saya melihat laporan barang hilang Anda di SIBAL-UINAM.\n".
                             "Apakah barang ini masih belum ditemukan?\n\n".
